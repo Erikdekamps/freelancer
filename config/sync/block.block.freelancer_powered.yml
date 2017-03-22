@@ -1,0 +1,22 @@
+uuid: 81b15933-158a-418a-a210-00e634f049f7
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - freelancer
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: freelancer_powered
+theme: freelancer
+region: '-1'
+weight: 2
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,30 @@
+{% if variables is not empty %}
+  <!-- Portfolio Grid Section -->
+  <section id="portfolio">
+    <div class="container">
+      {% if variables.title is not empty %}
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2>{{ variables.title }}</h2>
+          <hr class="star-primary">
+        </div>
+      </div>
+      {% endif %}
+      <div class="row">
+        {% for item in variables.portfolio_items %}
+          <div class="col-sm-4 portfolio-item">
+            <a href="#{{ item.modal }}" class="portfolio-link" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="{{ item.icon }}"></i>
+                </div>
+              </div>
+              <img src="{{ item.image }}" class="img-responsive" alt="{{ item.alt }}">
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!-- End Portfolio Grid Section -->
+{% endif %}

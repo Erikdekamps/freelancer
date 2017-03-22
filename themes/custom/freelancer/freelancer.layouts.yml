@@ -1,0 +1,7 @@
+freelancer:
+  label: Freelancer layout
+  category: Freelancer
+  template: templates/custom/freelancer-layout
+  regions:
+    main:
+      label: Content

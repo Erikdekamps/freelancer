@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * @file
+ * Contains the main hooks for the freelancer custom module.
+ */
+
+function freelancer_custom_theme($existing, $type, $theme, $path) {
+  return array(
+    'freelancer_custom_menu_block' => array(
+      'variables' => array(
+        'variables' => NULL,
+      ),
+      'template' => 'blocks/block--menu',
+    ),
+    'freelancer_custom_intro_block' => array(
+      'variables' => array(
+        'variables' => NULL,
+      ),
+      'template' => 'blocks/block--intro',
+    ),
+    'freelancer_custom_portfolio_block' => array(
+      'variables' => array(
+        'variables' => NULL,
+      ),
+      'template' => 'blocks/block--portfolio',
+    ),
+    'freelancer_custom_about_block' => array(
+      'variables' => array(
+        'variables' => NULL,
+      ),
+      'template' => 'blocks/block--about',
+    ),
+    'freelancer_custom_contact_me_block' => array(
+      'variables' => array(
+        'variables' => NULL,
+      ),
+      'template' => 'blocks/block--contact-me',
+    ),
+    'freelancer_custom_footer_block' => array(
+      'variables' => array(
+        'variables' => NULL,
+      ),
+      'template' => 'blocks/block--footer',
+    ),
+  );
+}

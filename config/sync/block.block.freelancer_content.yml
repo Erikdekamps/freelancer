@@ -1,0 +1,22 @@
+uuid: e2aade80-0531-4758-8b4b-e6862f2d796c
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - freelancer
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: freelancer_content
+theme: freelancer
+region: '-1'
+weight: 6
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

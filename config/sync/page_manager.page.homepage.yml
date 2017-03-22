@@ -1,0 +1,12 @@
+uuid: 8cd1a2f0-bbfe-4a79-8564-075f9db4b65b
+langcode: en
+status: true
+dependencies: {  }
+id: homepage
+label: Homepage
+description: 'The Freelancer homepage.'
+use_admin_theme: false
+path: /home
+access_logic: and
+access_conditions: {  }
+parameters: {  }

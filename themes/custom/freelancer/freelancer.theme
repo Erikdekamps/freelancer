@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the freelancer theme.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK() for html.html.twig.
+ */
+function freelancer_preprocess_html(array &$variables) {
+
+  // Add class.
+  $variables['attributes']['class'][] = 'index';
+  //$variables['attributes']['id'][] = 'page-top';
+}

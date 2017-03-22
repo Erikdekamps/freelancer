@@ -1,0 +1,36 @@
+{% if variables is not empty %}
+  <!-- About Section -->
+  <section class="success" id="about">
+    <div class="container">
+      {% if variables.title is not empty %}
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2>{{ variables.title }}</h2>
+          <hr class="star-light">
+        </div>
+      </div>
+      {% endif %}
+      <div class="row">
+        {% if variables.text_left is not empty %}
+          <div class="col-lg-4 col-lg-offset-2">
+            <p>{{ variables.text_left }}</p>
+          </div>
+        {% endif %}
+        {% if variables.text_right is not empty %}
+          <div class="col-lg-4">
+            <p>{{ variables.text_right }}</p>
+          </div>
+        {% endif %}
+
+        {% if variables.button_text is not empty %}
+          <div class="col-lg-8 col-lg-offset-2 text-center">
+            <a href="{{ variables.button_link }}" class="btn btn-lg btn-outline">
+              <i class="{{ variables.button_icon }}"></i> {{ variables.button_text }}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+  <!-- End About Section -->
+{% endif %}

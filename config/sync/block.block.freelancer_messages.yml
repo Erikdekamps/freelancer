@@ -1,0 +1,22 @@
+uuid: ca9c5dcb-2e71-4bfa-918e-695df28c15e5
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - freelancer
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: freelancer_messages
+theme: freelancer
+region: '-1'
+weight: -1
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

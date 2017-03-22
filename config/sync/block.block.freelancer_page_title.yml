@@ -1,0 +1,20 @@
+uuid: f65b653a-c00b-4f10-973a-f7ecbd58fe84
+langcode: en
+status: false
+dependencies:
+  theme:
+    - freelancer
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: freelancer_page_title
+theme: freelancer
+region: '-1'
+weight: 3
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

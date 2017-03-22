@@ -1,0 +1,83 @@
+uuid: 0580a638-3368-4799-8203-2540f06a24a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.homepage
+  module:
+    - freelancer_custom
+    - panels
+id: homepage-panels_variant-0
+label: Homepage
+variant: panels_variant
+variant_settings:
+  blocks:
+    4e0a288e-c0b3-4fbd-8198-96ceaa718d26:
+      id: menu_block
+      label: 'Menu block'
+      provider: freelancer_custom
+      label_display: '0'
+      region: main
+      weight: -2
+      uuid: 4e0a288e-c0b3-4fbd-8198-96ceaa718d26
+      context_mapping: {  }
+    9273128a-e950-413b-a3d3-391aa47b52ae:
+      id: intro_block
+      label: 'Intro block'
+      provider: freelancer_custom
+      label_display: '0'
+      region: main
+      weight: -1
+      uuid: 9273128a-e950-413b-a3d3-391aa47b52ae
+      context_mapping: {  }
+    4e1ff992-b68c-4be9-83bc-6f127961ece5:
+      id: portfolio_block
+      label: 'Portfolio block'
+      provider: freelancer_custom
+      label_display: '0'
+      region: main
+      weight: 0
+      uuid: 4e1ff992-b68c-4be9-83bc-6f127961ece5
+      context_mapping: {  }
+    859fe660-7405-4656-938c-67394a2f9922:
+      id: footer_block
+      label: 'Footer block'
+      provider: freelancer_custom
+      label_display: '0'
+      region: main
+      weight: 3
+      uuid: 859fe660-7405-4656-938c-67394a2f9922
+      context_mapping: {  }
+    5eb26ed9-78e0-4a22-9337-9f2437f4bd4c:
+      id: about_block
+      label: 'About block'
+      provider: freelancer_custom
+      label_display: '0'
+      region: main
+      weight: 1
+      uuid: 5eb26ed9-78e0-4a22-9337-9f2437f4bd4c
+      context_mapping: {  }
+    bdfb1e0f-185a-42c3-a462-776f432211a9:
+      id: contact_me_block
+      label: 'Contact me block'
+      provider: freelancer_custom
+      label_display: '0'
+      region: main
+      weight: 2
+      uuid: bdfb1e0f-185a-42c3-a462-776f432211a9
+      context_mapping: {  }
+  id: panels_variant
+  uuid: 5d4c9126-4bc6-4388-be54-bcb4f874857c
+  label: null
+  weight: 0
+  layout: freelancer
+  layout_settings: {  }
+  page_title: ''
+  storage_type: page_manager
+  storage_id: homepage-panels_variant-0
+  builder: ipe
+page: homepage
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

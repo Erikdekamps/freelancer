@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Template for the frontpage layout.
+ *
+ * Variables:
+ * - $id: An optional CSS id to use for the layout.
+ * - $content: An array of content, each item in the array is keyed to one
+ *   panel of the layout. This layout supports the following sections:
+ *   - content.top: The only panel in the layout.
+ *   - content.left: The only panel in the layout.
+ *   - content.middle: The only panel in the layout.
+ *   - content.right: The only panel in the layout.
+ */
+#}
+{% if content.header %}
+  <!-- Start Header -->
+  <header class="header" role="banner" aria-label="{{ 'Site header'|t }}">
+    {{ content.header }}
+  </header>
+  <!-- End Header -->
+{% endif %}
+
+{% if content.main %}
+  <!-- Start main content -->
+  {{ content.main }}
+  <!-- End main content -->
+{% endif %}
+
+{% if content.footer %}
+  <!-- Start Footer -->
+  <footer>
+    {{ content.footer }}
+  </footer>
+  <!-- End Footer -->
+{% endif %}
