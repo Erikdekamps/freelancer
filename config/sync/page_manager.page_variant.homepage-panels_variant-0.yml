@@ -30,6 +30,10 @@ variant_settings:
       weight: -1
       uuid: 9273128a-e950-413b-a3d3-391aa47b52ae
       context_mapping: {  }
+      intro_block_title: 'Jack Sparrow'
+      intro_block_image:
+        - '2'
+      intro_block_slogan: Captain
     4e1ff992-b68c-4be9-83bc-6f127961ece5:
       id: portfolio_block
       label: 'Portfolio block'
@@ -72,7 +76,7 @@ variant_settings:
   weight: 0
   layout: freelancer
   layout_settings: {  }
-  page_title: ''
+  page_title: Home
   storage_type: page_manager
   storage_id: homepage-panels_variant-0
   builder: ipe
