@@ -1,4 +1,5 @@
 <?php
+use Drupal\file\Entity\File;
 
 /**
  * @file
@@ -44,4 +45,133 @@ function freelancer_custom_theme($existing, $type, $theme, $path) {
       'template' => 'blocks/block--footer',
     ),
   );
+}
+
+/**
+ * @param int $fid
+ *   The numeric file id.
+ */
+function freelancer_custom_make_file_permanent($fid) {
+
+  // Check the file id.
+  if (!empty($fid)) {
+
+    // Load the file.
+    $file = File::load($fid);
+
+    // Check the current status.
+    if ($file && $file->isTemporary()) {
+
+      // Set file permanent.
+      $file->setPermanent();
+
+      // Add the file usage.
+      \Drupal::service('file.usage')->add($file, 'freelancer_custom', 'freelancer_custom_image', $file->id());
+
+      // Save the file.
+      $file->save();
+    }
+  }
+}
+
+/**
+ * Function for creating an image with image_style.
+ *
+ * @param int $fid
+ *   The file id.
+ * @param string $style
+ *   The image_style.
+ * @param array $attributes
+ *   Attributes to attach to the image.
+ * @param bool $url
+ *   Whether or not to create and return an image URL.
+ * @param null|string $alt
+ *   The alternative text.
+ *
+ * @return array Returns the themed image.
+ *   Returns the themed image.
+ */
+function freelancer_custom_generate_image_style($fid, $style, $attributes = [], $url = FALSE, $alt = 'Image') {
+
+  // Check if there is a file id.
+  if (!empty($fid)) {
+
+    // Load the file.
+    $file = File::load($fid);
+
+    // Check the file.
+    if (!empty($file)) {
+
+      // Get the file uri.
+      $uri = $file->getFileUri();
+
+      // Check if we want a URL only.
+      if ($url == TRUE) {
+
+        // Return the url.
+        return file_create_url($uri);
+      }
+
+      // Set variables.
+      $variables['uri'] = $uri;
+
+      // Check the style.
+      if (!empty($style)) {
+        $variables['style_name'] = $style;
+      }
+
+      // The image.factory service will check if our image is valid.
+      $image = \Drupal::service('image.factory')->get($uri);
+
+      // Check image.
+      if ($image->isValid()) {
+        $variables['width'] = $image->getWidth();
+        $variables['height'] = $image->getHeight();
+      }
+      else {
+        $variables['width'] = $variables['height'] = NULL;
+      }
+
+      // Check the style.
+      if (!empty($style)) {
+        // Render the image style.
+        $image = [
+          '#theme'      => 'image_style',
+          '#width'      => $variables['width'],
+          '#height'     => $variables['height'],
+          '#style_name' => $variables['style_name'],
+          '#uri'        => $variables['uri'],
+        ];
+      }
+      else {
+        // Render the image style.
+        $image = [
+          '#theme'  => 'image',
+          '#width'  => $variables['width'],
+          '#height' => $variables['height'],
+          '#uri'    => $variables['uri'],
+        ];
+      }
+
+      // Check for the alternative text.
+      if (!empty($alt)) {
+        $image['#alt'] = $alt;
+      }
+
+      // Check for classes.
+      if (!empty($attributes)) {
+        $image['#attributes'] = $attributes;
+      }
+
+      // Add the file entity to the cache dependencies.
+      // This will clear our cache when this entity updates.
+      $renderer = \Drupal::service('renderer');
+      $renderer->addCacheableDependency($image, $file);
+
+      // Return the image.
+      return $image;
+    }
+  }
+
+  return FALSE;
 }
